@@ -2,8 +2,6 @@
 def swap(_list, i, j):
     _list[i], _list[j] = _list[j], _list[i]
 
-    return _list
-
 def bubble_sort(_list):
     n = len(_list)
 
