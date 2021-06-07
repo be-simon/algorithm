@@ -24,14 +24,14 @@ def get_random_list():
     return _list
 
 
+if __name__ == '__main__':
+    sort_algos = [bubble_sort, selection_sort, insertion_sort, merge_sort, heap_sort, quick_sort]
 
-sort_algos = [bubble_sort, selection_sort, insertion_sort, merge_sort, heap_sort, quick_sort]
-
-for algo in sort_algos:
-    _list = get_random_list()
-    print(algo.__name__)
-    print('before : ', _list)
-    print('after : ', algo(_list))
-    algo_time = timeit.timeit(lambda: algo(_list), number=200000)
-    print('time : ', round(algo_time, 5))
-    print('-' * 10)
+    for algo in sort_algos:
+        _list = get_random_list()
+        print(algo.__name__)
+        print('before : ', _list)
+        print('after : ', algo(_list))
+        algo_time = timeit.timeit(lambda: algo(_list), number=200000)
+        print('time : ', round(algo_time, 5))
+        print('-' * 10)

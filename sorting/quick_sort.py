@@ -6,20 +6,20 @@ def _partition(_list, left, right):
     swap(_list, left, p)
 
     high = right
-    low = left + 1
+    low = left
 
     while low < high:
-        while _list[high] > pivot and high > left:
-            high -= 1
-        while _list[low] < pivot and low < right:
+        while high > left and _list[high] > pivot :
+            high -= 1        
+        while low < right and _list[low] <= pivot:
             low += 1
-        
+
         if low < high:
             swap(_list, low, high)
-        else:
-            break
+        
     swap(_list, left, high)
-    return p
+
+    return high
 
 def _quick_sort(_list, left, right):
     if left < right:
